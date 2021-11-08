@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Montserrat:wght@200&display=swap');
+
+.header{
+    background-color: #D9A7B4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand{
+    font-family: 'Bad Script', cursive;
+}
+
+nav{
+    width: 50%;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+ul li a{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+ul li a:visited{
+    color: unset;
+}
