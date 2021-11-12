@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import ItemCount from "../ItemCount/ItemCount";
+import './ItemListContainer.scss'; 
 
 const ItemListContainer = ({greeting}) => {
 
@@ -9,6 +11,8 @@ const ItemListContainer = ({greeting}) => {
                     {greeting}
                 </h2>
             </div>
+
+            <ItemCount initial="1" stock="5"/>
         </Fragment>
     );
 

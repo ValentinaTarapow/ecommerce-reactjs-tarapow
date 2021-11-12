@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { HiShoppingCart } from "react-icons/hi";
+import './CartWidget.scss'; 
 
 const CartWidget = () =>{
 

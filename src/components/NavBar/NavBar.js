@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import CartWidget from '../components/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
+import "./NavBar.scss"; 
 
 const NavBar = () =>{
 
