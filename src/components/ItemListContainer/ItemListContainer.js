@@ -12,7 +12,7 @@ const ItemListContainer = ({greeting}) => {
                 </h2>
             </div>
 
-            <ItemCount initial="1" stock="5"/>
+            <ItemCount stock="5"/>
         </Fragment>
     );
 
