@@ -1,0 +1,23 @@
+.itemCount-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .itemCount{
+        width: 20%;
+
+        .operations{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+
+            p{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}

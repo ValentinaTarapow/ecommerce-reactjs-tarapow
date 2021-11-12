@@ -1,0 +1,21 @@
+.btn-shopping-cart{
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px; 
+    background-color: #D7D7D9;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 8px ;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+
+    -webkit-box-shadow: 0 4px 4px -2px #A65D6A;
+    -moz-box-shadow: 0 4px 4px -2px #A65D6A;
+    box-shadow: 0 4px 4px -2px #A65D6A;
+}
