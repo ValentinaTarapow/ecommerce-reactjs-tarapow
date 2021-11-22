@@ -23,7 +23,7 @@ export const ItemListContainer = () => {
                 setLoading(false)
             })
 
-    }, [])
+    }, [products])
 
     return (
         <Container className="w-100 d-flex justify-content-center">

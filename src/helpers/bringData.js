@@ -6,6 +6,6 @@ export const bringData = () => {
             if (true){
                 resolve(stock);
             }
-        }, 2000)
+        }, 1000)
     })
 }
