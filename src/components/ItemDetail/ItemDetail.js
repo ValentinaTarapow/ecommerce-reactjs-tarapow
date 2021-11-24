@@ -7,7 +7,7 @@ export const ItemDetail = ({product}) => {
 	return (
 		<section className="ItemDetail" >
 			<div className="card w-50 m-3 item-detail">
-				<img src={product.img} size="4" />
+				<img src={product.img} className="ItemImg" />
 				<div className="card-body ItemDetail-info">
 					<h1 className="card-title text-center">{product.brand} - {product.name} </h1>
 					<h2 className="text-center">Price: ${product.price}</h2>

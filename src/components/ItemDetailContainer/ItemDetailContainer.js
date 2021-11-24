@@ -1,18 +1,21 @@
 import "./ItemDetailContainer.scss";
 import {ItemDetail} from "../ItemDetail/ItemDetail";
 import React, { useState, useEffect } from 'react';
-import { bringData } from '../../helpers/bringData'
+import { bringData } from '../../helpers/bringData';
+import { useParams } from "react-router";
 
 export const ItemDetailContainer = () =>
 {        
-        const [loading, setLoading] = useState([]);
-        const [products, setProducts] = useState(false);
+        const [item, setItem] = useState();
+        const [loading, setLoading] = useState(false);
+
+        const { itemId } = useParams();
 
         useEffect(() => {
             setLoading(true)
             bringData()
                 .then( (resp) => {
-                    setProducts(resp)
+                    setItem( resp.find(prod => prod.id === Number(itemId)) );
                 })
                 .catch( (error) => {
                     console.log(error)
@@ -20,14 +23,14 @@ export const ItemDetailContainer = () =>
                 .finally(() => {
                     setLoading(false)
                 })
-        }, [products])
+        }, [itemId])
 
         return (
-            <div>
+            <div className="ItemDetail-container">
                 {
                     loading
                         ? <h2 className="loading my-5">Loading...</h2>
-                        : <ItemDetail product={products[0]} />
+                        : <ItemDetail product={item} />
                 }
             </div>
         )

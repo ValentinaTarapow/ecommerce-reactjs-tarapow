@@ -59,3 +59,26 @@ header{
     color: black;
 }
 
+.link{
+    text-decoration: none;
+}
+
+#dropdown-basic{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-name{
+    margin-bottom: 0;
+    &:hover{
+        border-bottom: 1px solid black;
+    }
+}
+
+.dropdownLink{
+    &:hover{
+        border-bottom: none;
+    }
+}
