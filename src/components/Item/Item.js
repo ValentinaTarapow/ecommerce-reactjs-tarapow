@@ -14,7 +14,7 @@ export const Item = ({product}) => {
                         <p className="card-text"><span className="fw-bold">Fragrance family:</span> {product.family}</p>
                     </div>
                     <div className="w-100 d-flex justify-content-center">
-                    <Link to={`/detail/${product.id}`} className="btn btn-secondary m-4">More info</Link>
+                    <Link to={`/item/${product.id}`} className="btn btn-secondary m-4">More info</Link>
                     </div>
                     
                 </div>

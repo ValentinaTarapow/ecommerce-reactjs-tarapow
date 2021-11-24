@@ -15,8 +15,8 @@ function App() {
       
         <Routes>
           <Route path="/" element={ <ItemListContainer /> } />
-          <Route path="/:genderId" element={ <ItemListContainer /> } />
-          <Route path="/detail/:itemId" element={ <ItemDetailContainer /> } />
+          <Route path="category/:genderId" element={ <ItemListContainer /> } />
+          <Route path="item/:itemId" element={ <ItemDetailContainer /> } />
           <Route path="*" element={ < Navigate to="/" /> } />
         </Routes>
 
@@ -28,15 +28,3 @@ function App() {
 }
 
 export default App;
-
-
-{/* <div className="App">
-  <NavBar />
-
-  <main>
-    <ItemListContainer />
-    <ItemDetailContainer />
-  </main>
-
-  <Footer />
-</div> */}

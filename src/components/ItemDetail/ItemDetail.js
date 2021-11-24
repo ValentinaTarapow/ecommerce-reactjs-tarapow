@@ -1,6 +1,6 @@
 import "./ItemDetail.scss"
 import ItemCount from '../ItemCount/ItemCount';
-import React ,{ useState, useEffect } from 'react';
+import React from 'react';
 
 export const ItemDetail = ({product}) => {
 
@@ -19,7 +19,6 @@ export const ItemDetail = ({product}) => {
 					<div className="card-text text-start">
 						<h4>Top Notes</h4>
 							<ul>
-								{/* li top notes */}
 								{product.topNotes.map((note) => <li>{note}</li>)}
 							</ul>
 						<h4>Middle Notes</h4>

@@ -23,14 +23,14 @@ const NavBar = () =>{
 
                                 <Dropdown.Menu>
                                     <Dropdown.Item key="all" > <Link to="/" className="dropdownLink"> All products </Link> </Dropdown.Item>
-                                    <Dropdown.Item key="masculine" > <Link to="/masculine" className="dropdownLink"> Masculine Perfumes </Link> </Dropdown.Item>
-                                    <Dropdown.Item key="femenine"> <Link to="/femenine" className="dropdownLink"> Femenine Perfumes </Link> </Dropdown.Item>
+                                    <Dropdown.Item key="masculine" > <Link to="category/masculine" className="dropdownLink"> Masculine Perfumes </Link> </Dropdown.Item>
+                                    <Dropdown.Item key="femenine"> <Link to="category/femenine" className="dropdownLink"> Femenine Perfumes </Link> </Dropdown.Item>
                                     
                                 </Dropdown.Menu>
                             </Dropdown>
                         </li>
                         <li> <Link to="" > Contact </Link> </li>
-                        <li> <Link to="" ><CartWidget /> </Link> </li>
+                        <li> <Link to="" > <CartWidget /> </Link> </li>
                     </ul>
                 </nav>
             </header>
@@ -39,5 +39,3 @@ const NavBar = () =>{
 }
 
 export default NavBar;
-
-{/* <li> <Link to="/detail" > Products </Link> </li> */}
