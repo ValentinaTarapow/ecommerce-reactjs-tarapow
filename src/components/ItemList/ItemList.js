@@ -10,7 +10,7 @@ export const ItemList = ({products}) => {
         <Container>
             <h2 className="text-center item-list-title my-4">Our Products</h2>
             <Row className="item-list w-100 d-flex justify-content-center">
-                {products.map((prod) => <Item product={prod}/>)}
+                {products.map((prod) => <Item {...prod}/>)}
             </Row>
         </Container>
     )

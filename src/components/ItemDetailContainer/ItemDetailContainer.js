@@ -16,7 +16,7 @@ export const ItemDetailContainer = () =>
             bringData()
                 .then( (resp) => {
                     if(!itemId){
-                        console.log("no hay id")
+                        console.log("no id to look for");
                     }
                     else{
                         setItem( resp.find( prod => prod.id === Number(itemId) ) );
@@ -35,7 +35,7 @@ export const ItemDetailContainer = () =>
                 {
                     loading
                         ? <h2 className="loading my-5">Loading...</h2>
-                        : <ItemDetail product={item} />
+                        : <ItemDetail {...item} />
                 }
             </div>
         )
