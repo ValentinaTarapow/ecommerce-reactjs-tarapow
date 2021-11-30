@@ -34,7 +34,7 @@ export const ItemDetailContainer = () =>
             <div className="ItemDetail-container">
                 {
                     loading
-                        ? <h2 className="loading my-5">Loading...</h2>
+                        ? <h2 className="loading my-5 text-center">Loading...</h2>
                         : <ItemDetail {...item} />
                 }
             </div>

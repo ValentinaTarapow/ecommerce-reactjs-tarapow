@@ -5,20 +5,19 @@ import { HiShoppingCart } from "react-icons/hi";
 import { Button } from 'react-bootstrap';
 import './ItemCount.scss'; 
 
-const ItemCount = ({stock}) =>{
+const ItemCount = ({max, counter, setCounter, handleAdd }) =>{
 
-    const [counter, setCounter] = useState(1);
-
-    const plusClick = () => {
-        if(counter===stock){
+// Handlers
+    const handlePlus = () => {
+        if(counter===max){
             return
-        } else if (counter < stock){
+        } else if (counter < max){
             setCounter( counter + 1 );
         }
         
     }
 
-    const minusClick = () => {
+    const handleMinus = () => {
         if(counter===0){
             return
         }else if (counter > 0){
@@ -26,36 +25,34 @@ const ItemCount = ({stock}) =>{
         }
         
     }
+//__________________________________________________
 
+
+//Checks for enabling minus, plus and add buttons
     const checkZero = ()=>{
         return (counter===0);
     }
 
     const checkStock = () =>{
-        return (counter>=stock);
+        return (counter>=max);
     }
 
-    const checkAddChart = () =>{
-        return ((counter===0 || counter >stock));
+    const checkAdd = () =>{
+        return ((counter===0 || counter >max));
     }
-    
-    const onAdd = () => {
-        return(
-            alert(`You added ${counter} products to the shopping cart`)
-        )
-    }
+//__________________________________________________
 
     return(
         <div className="itemCount-container">
             <div className="itemCount">
                 <div className="operations">
-                    <Button variant="outline-secondary" disabled={checkZero()} className="btn-minus" onClick={minusClick} ><AiOutlineMinus/></Button>
-                    <p onChange={checkZero,checkStock, checkAddChart}>{`${counter}`}</p>
-                    <Button variant="outline-secondary" disabled={checkStock()} className="btn-plus" onClick={plusClick}><AiOutlinePlus/></Button>
+                    <Button variant="outline-secondary" disabled={checkZero()} className="btn-minus" onClick={handleMinus} ><AiOutlineMinus/></Button>
+                    <span onChange={checkZero,checkStock, checkAdd}>{`${counter}`}</span>
+                    <Button variant="outline-secondary" disabled={checkStock()} className="btn-plus" onClick={handlePlus}><AiOutlinePlus/></Button>
                 </div>
                 
                 <div>
-                    <Button disabled={checkAddChart()} className="w-100 btn-add-chart" onClick={onAdd}><HiShoppingCart/> Add to chart</Button>
+                    <Button disabled={checkAdd()} className="w-100 btn-add-chart" onClick={handleAdd}><HiShoppingCart/> Add to chart</Button>
                 </div>
             </div>
         </div>
