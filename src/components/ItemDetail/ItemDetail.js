@@ -1,27 +1,31 @@
 import "./ItemDetail.scss"
 import ItemCount from '../ItemCount/ItemCount';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {Link} from 'react-router-dom';
+import { CartContext } from "../../context/CartContext";
 
 
 export const ItemDetail = ({id, stock, price, brand, name, gender, family, size, img, topNotes, middleNotes, baseNotes}) => {
 
 	const [counter , setCounter] = useState(1);
 	const [added, setAdded] = useState(false);
+	const {addItem, isInCart} = useContext(CartContext);
 
 // Handlers
 	const handleAdd = () => {
 		if(counter>0){
-			console.log('Item agregado: ',
+
+			addItem(
 				{
 					id,
 					name,
-					gender,
-					family,
+					brand,
 					price,
+					img,
+					size,
 					counter
 				}
-			);
+			)
 		
 			setAdded(true);
 		}
@@ -57,7 +61,7 @@ export const ItemDetail = ({id, stock, price, brand, name, gender, family, size,
 					</div>
 				</div>
 
-				{!added 
+				{!isInCart(id)
 					?	<ItemCount 
 							max={stock} 
 							counter={counter} 

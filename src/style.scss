@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Montserrat:wght@200&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -11,3 +12,16 @@ body{
     background-size: cover;
 }
 
+.loading{
+    font-family: 'Homemade Apple', cursive;
+    font-weight: lighter;
+    word-spacing: 6px;
+    text-transform: none;
+}
+
+.item-list-title{
+    font-family: 'Homemade Apple', cursive;
+    font-weight: lighter;
+    word-spacing: 6px;
+    text-transform: none;
+}

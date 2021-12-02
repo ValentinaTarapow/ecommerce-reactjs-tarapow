@@ -30,7 +30,7 @@ const NavBar = () =>{
                             </Dropdown>
                         </li>
                         <li> <Link to="" > Contact </Link> </li>
-                        <li> <Link to="" > <CartWidget /> </Link> </li>
+                        <li> <Link to="/cart" > <CartWidget /> </Link> </li>
                     </ul>
                 </nav>
             </header>
