@@ -1,37 +1,38 @@
 import './ItemListContainer.scss'; 
-import React, { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
-import { bringData } from '../../helpers/bringData'
-import { ItemList } from '../ItemList/ItemList'
+import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
+import { ItemList } from '../ItemList/ItemList';
 import { useParams } from 'react-router';
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from '../../firebase/config';
 
 export const ItemListContainer = () => {
 
     const [loading, setLoading] = useState(false)
     const [products, setProducts] = useState([])
-    
-    // Hook
-    const { genderId } = useParams();
+
+    const { genderId } = useParams()
 
     useEffect(() => {
 
         setLoading(true)
-        bringData()
-            .then( (resp) => {
-                if(!genderId){
-                    setProducts(resp);
-                }
-                else{
-                    setProducts( resp.filter(prod => prod.gender === genderId) );
-                }
-            })
-            .catch( (error) => {
-                console.log(error)
-            })
-            .finally( () => {
-                setLoading(false)
-            })
 
+        const productsRef = collection(db, 'products')
+
+        const q = genderId    ? query(productsRef, where("gender", "==", genderId))
+                            : productsRef
+
+        getDocs(q)
+            .then((snapShot) => {
+                const items = snapShot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                setProducts(items)
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     }, [genderId])
 
     return (

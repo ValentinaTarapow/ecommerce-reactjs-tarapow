@@ -1,35 +1,35 @@
 import "./ItemDetailContainer.scss";
 import {ItemDetail} from "../ItemDetail/ItemDetail";
 import React, { useState, useEffect } from 'react';
-import { bringData } from '../../helpers/bringData';
 import { useParams } from "react-router";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../../firebase/config';
 
 export const ItemDetailContainer = () =>
-{        
-        const [item, setItem] = useState();
-        const [loading, setLoading] = useState(false);
-
-        const { itemId } = useParams();
-
+{
+        const [loading, setLoading] = useState([])
+        const [item, setItem] = useState(false)
+    
+        const { itemId } = useParams()
+    
         useEffect(() => {
+    
             setLoading(true)
-            bringData()
-                .then( (resp) => {
-                    if(!itemId){
-                        console.log("no id to look for");
-                    }
-                    else{
-                        setItem( resp.find( prod => prod.id === Number(itemId) ) );
-                    }
-                })
-                .catch( (error) => {
-                    console.log(error)
-                })
+    
+            const docRef = doc(db, "products", itemId)
+            getDoc(docRef)
+                .then((doc) => {
+                    setItem({
+                        id: doc.id,
+                        ...doc.data()
+                    })
+                }) 
                 .finally(() => {
-                    setLoading(false)
+                    setLoading(false);
                 })
         }, [itemId])
 
+    
         return (
             <div className="ItemDetail-container">
                 {
