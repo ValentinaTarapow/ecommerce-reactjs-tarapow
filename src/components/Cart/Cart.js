@@ -45,7 +45,7 @@ export const Cart = () => {
 
                     <section className="cart-buttons w-100 d-flex justify-content-around">
                         <btn className="btn btn-danger" onClick={clear}>Empty</btn>
-                        <btn className="btn btn-success" >Finish</btn>
+                        <Link to="/checkout" className="btn btn-success">Finish</Link>
                     </section>
 
                 </>
