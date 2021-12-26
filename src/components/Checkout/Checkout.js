@@ -3,7 +3,7 @@ import { Navigate } from 'react-router'
 import { CartContext } from '../../context/CartContext'
 import { db } from '../../firebase/config'
 import { validateData } from '../../helpers/validateData'
-import { collection, Timestamp, writeBatch, query, where, documentId, getDocs, addDoc } from 'firebase/firestore/lite'
+import { collection, Timestamp, writeBatch, query, where, documentId, getDocs, addDoc } from 'firebase/firestore'
 import Swal from 'sweetalert2'
 
 export const Checkout = () => {
