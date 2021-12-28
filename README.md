@@ -1,4 +1,5 @@
-# Escentially - React Js E-commerce - Coderhouse
+# React Js E-commerce - Coderhouse
+# Escentially: perfume store
 
 This project was bootstrapped with Create React App.
 
