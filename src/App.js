@@ -7,7 +7,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import {Footer} from './components/Footer/Footer';
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer';
 import {Cart} from './components/Cart/Cart';
-import {BrowserRouter, Route , Routes, Navigate} from 'react-router-dom';
+import {BrowserRouter, Route , Routes} from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { Checkout } from './components/Checkout/Checkout';
 import { Page404 } from './components/DeadEnds/Page404/Page404';
@@ -27,7 +27,6 @@ function App() {
             <Route path="item/:itemId" element={ <ItemDetailContainer /> } />
             <Route path="cart" element={ <Cart /> } />
             <Route path="checkout" element={ <Checkout /> } />
-            {/* <Route path="*" element={ < Navigate to="/" /> } /> */}
             <Route path="*" element={ < Page404 /> } />
           </Routes>
 

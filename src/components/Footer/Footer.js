@@ -9,7 +9,7 @@ import { FaRegHeart } from "react-icons/fa";
 
 export const Footer = () =>{
     return(
-    <footer className="footer w-100 d-flex flex-row justify-content-between">
+    <footer className="footer p-4 w-100 d-flex flex-row justify-content-between">
         <div className="text-center">
             <h4 className="mb-4">Contact Us</h4>
             <p><AiOutlinePhone /> +54 9 1169972991</p>

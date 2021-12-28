@@ -4,7 +4,9 @@ import { CartContext } from '../../context/CartContext'
 import { db } from '../../firebase/config'
 import { validateData } from '../../helpers/validateData'
 import { collection, Timestamp, writeBatch, query, where, documentId, getDocs, addDoc } from 'firebase/firestore'
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import "./Checkout.scss";
+import {AiOutlineSend} from "react-icons/ai";
 
 export const Checkout = () => {
 
@@ -64,7 +66,8 @@ export const Checkout = () => {
                     Swal.fire({
                         icon: 'success',
                         title: 'Your order has been placed successfully',
-                        text: `Your order ID is: ${res.id}`                        
+                        text: `Your order ID is: #${res.id}`,
+                        footer: 'We will contact you very soon to update your order status. Thank you for your purchase!'                       
                     })
                     clear()
                 })
@@ -84,51 +87,67 @@ export const Checkout = () => {
                 ? <Navigate to="/"/>
                 :
                     <div className="container my-5">
-                        <h2>Order</h2>
+                        <h2>Checkout : finish your order</h2>
                         <hr/>
 
-                        <form onSubmit={handleSubmit}>
-                            <input
-                                onChange={handleInputChange}
-                                name="name"
-                                value={values.name}
-                                className="form-control my-2"
-                                type="text"
-                                placeholder="Name"
-                            />
-                            {values.name.length < 4 && <small>Invalid name</small>}
+                        <form className='checkout-form p-4' onSubmit={handleSubmit}>
+                            <div>
+                                <div>
+                                    <label>Name</label>
+                                    {values.name.length < 2 && <small>This field is mandatory (at least 2 characters)</small>}
+                                    <input
+                                        onChange={handleInputChange}
+                                        name="name"
+                                        value={values.name}
+                                        type="text"
+                                        placeholder="Name"
+                                        className={values.name.length < 2 ? 'form-control my-2 invalid-form' : 'form-control my-2' }
+                                    />
+                                </div>
 
-                            <input
-                                onChange={handleInputChange}
-                                name="surname"
-                                value={values.surname}
-                                className="form-control my-2"
-                                type="text"
-                                placeholder="Surname"
-                            />
-                            {values.surname.length < 4 && <small>Invalid surname</small>}
+                                <div>
+                                    <label>Surname</label>
+                                    {values.surname.length < 2 && <small>This field is mandatory (at least 2 characters)</small>}
+                                    <input
+                                        onChange={handleInputChange}
+                                        name="surname"
+                                        value={values.surname}
+                                        type="text"
+                                        placeholder="Surname"
+                                        className={values.surname.length < 2 ? 'form-control my-2 invalid-form' : 'form-control my-2' }
+                                    />
+                                </div>
 
-                            <input
-                                onChange={handleInputChange}
-                                name="email"
-                                value={values.email}
-                                className="form-control my-2"
-                                type="email"
-                                placeholder="Email"
-                            />
-                            {values.email.length < 4 && <small>Invalid email</small>}
+                                <div>
+                                    <label>Email</label>
+                                    {values.email.length < 6 && <small>This field is mandatory (at least 6 characters)</small>}
+                                    <input
+                                        onChange={handleInputChange}
+                                        name="email"
+                                        value={values.email}
+                                        type="email"
+                                        placeholder="Email"
+                                        className={values.email.length < 6 ? 'form-control my-2 invalid-form' : 'form-control my-2' }
+                                    />
+                                </div>
 
-                            <input
-                                onChange={handleInputChange}
-                                name="emailConfirm"
-                                value={values.emailConfirm}
-                                className="form-control my-2"
-                                type="email"
-                                placeholder="Repeat email"
-                            />
-                            { (values.emailConfirm) !== (values.email) && (<small>Emails do not match</small>)}
-
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                                <div>
+                                <label>Email confirmation</label>
+                                { (values.emailConfirm) !== (values.email) && (<small>Emails do not match</small>)}
+                                    <input
+                                        onChange={handleInputChange}
+                                        name="emailConfirm"
+                                        value={values.emailConfirm}
+                                        type="email"
+                                        placeholder="Repeat email"
+                                        className={((values.emailConfirm) !== (values.email) || (!values.email) )? 'form-control my-2 invalid-form' : 'form-control my-2' }
+                                    />
+                                </div>
+                            </div>
+                            
+                            <div className="d-flex justify-content-center">
+                                <button type="submit" className="btn btn-submit-order my-5">Submit order <AiOutlineSend /></button>
+                            </div>
                         </form>
                     </div>
             }

@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import React from "react";
 import CartWidget from '../CartWidget/CartWidget';
 import "./NavBar.scss"; 
 import {Link} from 'react-router-dom';

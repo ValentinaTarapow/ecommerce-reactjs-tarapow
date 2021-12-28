@@ -1,7 +1,7 @@
-import { Fragment, useState } from "react";
 import { AiOutlineMinus } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { HiShoppingCart } from "react-icons/hi";
+import React from "react";
 import { Button } from 'react-bootstrap';
 import './ItemCount.scss'; 
 

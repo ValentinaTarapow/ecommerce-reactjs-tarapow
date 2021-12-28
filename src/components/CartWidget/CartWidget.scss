@@ -20,15 +20,17 @@
     box-shadow: 0 4px 4px -2px #A65D6A;
 }
 
-.hidden{
-    visibility: hidden;
-    pointer-events: none;
-    cursor: none;
-    opacity: 0;
-}
 
-.widget{
-    visibility: visible;
-    opacity: 1;
-    transition: all .5s ease-in-out;
-}
+
+// .widget{
+//     visibility: visible;
+//     opacity: 1;
+//     transition: all .5s ease-in-out;
+// }
+
+// .hidden{
+//     visibility: hidden;
+//     pointer-events: none;
+//     opacity: 0;
+//     cursor: none;
+// }

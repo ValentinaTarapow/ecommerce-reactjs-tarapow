@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 export const ItemDetailContainer = () =>
 {
@@ -34,7 +36,15 @@ export const ItemDetailContainer = () =>
             <div className="ItemDetail-container">
                 {
                     loading
-                        ? <h2 className="loading my-5 text-center">Loading...</h2>
+                        ? 
+                            <Loader
+                                className="loading my-5 text-center"
+                                type="Hearts"
+                                color="#D9A7B4"
+                                height={100}
+                                width={100}
+                            />
+                        
                         : <ItemDetail {...item} />
                 }
             </div>

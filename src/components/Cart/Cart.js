@@ -1,7 +1,6 @@
 import "./Cart.scss"
 import React, { useContext } from 'react';
 import { CartContext } from "../../context/CartContext";
-import { CartItem } from "./CartItem";
 import { Link } from "react-router-dom";
 import {Table} from 'react-bootstrap'
 import {CartItemTable} from "./CartItemTable"
@@ -18,7 +17,7 @@ export const Cart = () => {
                 //FULL CART
                 cart.length > 0 ?
                 <>
-                    <h1 className="text-center">Your Cart</h1>
+                    <h2 className="text-center">Your Cart</h2>
 
                     <section className="cart-list my-4">
                         <Table className="bg-light" variant="striped">
@@ -53,7 +52,7 @@ export const Cart = () => {
                 : //EMPTY CART
                 <>
                     <section className="empty-cart my-5 w-100 d-flex flex-column justify-content-center align-items-center">
-                        <h1 className="text-center mb-5">Your cart is empty :(</h1>
+                        <h2 className="text-center mb-5">Your cart is empty :(</h2>
                         <Link to="/"><btn className="btn btn-secondary">Go Home</btn></Link>
                     </section>
                 </>
