@@ -7,8 +7,11 @@ This project was bootstrapped with Create React App.
 
 - SASS
 - React Bootstrap for UI elements
+    https://react-bootstrap.github.io
 - Sweet alert for UI alerts
+    https://sweetalert.js.org/guides/
 - Firebase to create our products database
+    https://firebase.google.com/
 
 ## Available Scripts
 
