@@ -8,10 +8,15 @@ This project was bootstrapped with Create React App.
 - SASS
 - React Bootstrap for UI elements
     https://react-bootstrap.github.io
-- Sweet alert for UI alerts
-    https://sweetalert.js.org/guides/
+- Sweet Alert 2 for UI alerts
+    https://sweetalert2.github.io
 - Firebase to create our products database
     https://firebase.google.com/
+- React Icons for icons
+    https://react-icons.github.io/react-icons/
+- React Loader Spinner to improve the loading wait
+    https://www.npmjs.com/package/react-loader-spinner
+
 
 ## Available Scripts
 
