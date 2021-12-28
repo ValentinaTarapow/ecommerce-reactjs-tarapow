@@ -5,10 +5,10 @@ This project was bootstrapped with Create React App.
 
 ## Elements used
 
--SASS
--React Bootstrap for UI elements
--Sweet alert for UI alerts
--Firebase to create our products database
+- SASS
+- React Bootstrap for UI elements
+- Sweet alert for UI alerts
+- Firebase to create our products database
 
 ## Available Scripts
 
