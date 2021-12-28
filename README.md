@@ -1,5 +1,5 @@
-# React Js E-commerce - Coderhouse
 # Escentially: perfume store
+# React Js - Ecommerce - Coderhouse
 
 This project was bootstrapped with Create React App.
 
