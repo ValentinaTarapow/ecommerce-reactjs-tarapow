@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap'); 
+
+$width : 300px;
+
+.hr-404{ 
+    border:         none;
+    border-left:    1px solid hsla(200, 10%, 50%,100);
+    height:         100vh;
+    width:          1px;       
+}
+
+#page404{
+    font-family: 'Pushster', cursive;
+
+    h4{
+        font-family: 'Pushster', cursive;
+        width: $width;
+        font-size: 9rem;
+        text-align: center;
+        color: #343140
+    }
+
+    p{
+        width: $width;
+        font-size: 3rem;
+        text-align: center;
+        color: lighten( #A65D6A, 10%) ;
+    }
+
+    .redirect{
+        font-size: 2rem;
+        color: #686673;
+    }
+}
