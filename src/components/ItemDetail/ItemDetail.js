@@ -32,12 +32,6 @@ export const ItemDetail = ({id, stock, price, brand, name, gender, family, size,
 	}
 // ___________________________________
 
-	//RESOLVER: como pasa el array y como leerlo
-	console.log(topNotes);
-	console.log(middleNotes);
-	console.log(baseNotes);
-
-
 	return (
 
 		<section className="ItemDetail p-5" >
