@@ -1,4 +1,4 @@
-import {writeBatch, collection, query, where, documentId, getDocs, addDoc, Timestamp} from 'firebase/firestore/lite';
+import {writeBatch, collection, query, where, documentId, getDocs, addDoc, Timestamp} from 'firebase/firestore';
 import Swal from 'sweetalert2';
 import {db} from './config';
 
