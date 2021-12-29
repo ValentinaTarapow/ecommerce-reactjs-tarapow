@@ -10,7 +10,7 @@ const CartWidget = () =>{
         <Fragment>
             <btn className="btn-shopping-cart">
                 <HiShoppingCart size="24" className="ms-2"/>
-                <span className className="mx-2">{totalAmount()}</span>
+                <span className className="mx-2"> {totalAmount()} </span>
             </btn>
         </Fragment>
     );
