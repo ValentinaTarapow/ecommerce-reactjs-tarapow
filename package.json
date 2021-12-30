@@ -1,7 +1,7 @@
 {
 
   "name": "my-app",
-  "homepage": "http://ValentinaTarapow.github.io/ecommerce-reactjs-tarapow",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
